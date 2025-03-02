@@ -1,18 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect, HttpResponseNotFound, \
+    HttpResponseBadRequest, HttpResponseForbidden
 
 
 def index(request):
-    return HttpResponse('Главная страница')
+    return render(request, 'blog/index.html')
 
 
-def products(request, id):
-    return HttpResponse(f'Товар {id}')
-
-
-def comments(request, id):
-    return HttpResponse(f'Комментарии о товаре {id}')
-
-
-def questions(request, id):
-    return HttpResponse(f'Вопросы о товаре {id}')
+def about(request):
+    return render(request, 'blog/about.html')

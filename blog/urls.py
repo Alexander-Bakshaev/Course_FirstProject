@@ -1,13 +1,8 @@
-from django.urls import path, include
-from . import views
-
-product_patterns = [
-    path('', views.products),
-    path('comments/', views.comments),
-    path('questions/', views.questions),
-]
+from django.urls import path
+from django.views.generic import TemplateView
+from blog import views
 
 urlpatterns = [
     path('', views.index),
-    path('products/<int:id>', include(product_patterns)),
+    path('about/', views.about),
 ]
