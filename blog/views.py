@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanen
 
 
 def index(request):
-    return render(request, 'blog/index.html')
+    return render(request, 'base.html')
 
 
 def about(request):
